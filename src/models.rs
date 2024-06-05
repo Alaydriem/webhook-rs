@@ -165,6 +165,7 @@ impl Message {
     pub fn new() -> Self {
         Self {
             content: None,
+            thread_name: None,
             username: None,
             avatar_url: None,
             tts: false,
