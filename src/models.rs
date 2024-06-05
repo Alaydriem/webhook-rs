@@ -151,6 +151,7 @@ impl MessageContext {
 #[derive(Serialize, Debug)]
 pub struct Message {
     pub content: Option<String>,
+    pub thread_name: Option<String>,
     pub username: Option<String>,
     pub avatar_url: Option<String>,
     pub tts: bool,
@@ -177,6 +178,12 @@ impl Message {
         self.content = Some(content.to_owned());
         self
     }
+
+    pub fn thread_name(&mut self, thread_name: &str) -> &mut Self {
+        self.thread_name = Some(thread_name.to_owned());
+        self
+    }
+
 
     pub fn username(&mut self, username: &str) -> &mut Self {
         self.username = Some(username.to_owned());
