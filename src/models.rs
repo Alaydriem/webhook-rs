@@ -180,8 +180,10 @@ impl Message {
         self
     }
 
-    pub fn thread_name(&mut self, thread_name: &str) -> &mut Self {
-        self.thread_name = Some(thread_name.to_owned());
+    pub fn thread_name(&mut self, thread_name: &str, is_forum: bool) -> &mut Self {
+        if is_forum {
+            self.thread_name = Some(thread_name.to_owned());
+        }
         self
     }
 
